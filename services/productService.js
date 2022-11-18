@@ -36,6 +36,9 @@ export default class ProductService{
         this.productList = this.productList.filter(product => product.id !== id);
     }
     update(product){
+        for (let logger of this.logger) {
+            logger.log("ProductService.Update method")
+        }
     let index=this.productList.findIndex(u=>u.id==product.id);
    //   let updatedProductList =this.productList.find(u=>u.id==product.id);
      this.productList[index]=product;
